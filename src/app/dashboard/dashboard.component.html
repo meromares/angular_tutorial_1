@@ -1,0 +1,35 @@
+<h3>Top Currencies</h3>
+<!--ul>
+  <li ngFor="let currency of currencies2">
+    <div>{{currency.name}}</div>
+    <div>{{currency.country}}</div>
+    <div>{{currency.rate / 100}}</div>
+  </li>
+</ul-->
+
+
+
+
+
+
+<a *ngFor="let currency of currencies" class="col-1-4"
+    routerLink="/detail/{{currency.id}}">
+<!--CHANGE BECAUSE OF ROUTING-->
+<!--div class="grid grid-pad"-->
+<div class="module currency">
+
+      <h4>{{currency.name}}</h4>
+
+</div>
+</a>
+
+<button (click)="ecb()">Currencies from ECB</button>
+<button (click)="refresh()">Refresh</button>
+
+
+
+<ul class="currencies">
+<li *ngFor="let currency of currenciesecb" [class.selected]="currency === selectedCurrency" (click)="onSelect(currency)">
+    <span>{{currency.name}}</span> {{currency.rate / 100}}
+  </li>
+</ul>

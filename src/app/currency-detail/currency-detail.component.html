@@ -1,0 +1,17 @@
+
+<div *ngIf="currency">
+
+
+  <h2>{{currency.name | uppercase}} Details</h2>
+  <img width="1200" alt="Currency Graph" src="assets/img/currency.png">
+    <div><span>id: </span>{{currency.id}}</div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="currency.name" placeholder="name"/>
+      </label>
+
+    </div>
+
+    <button (click)="goBack()">go back</button>
+
+</div>

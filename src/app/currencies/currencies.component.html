@@ -1,0 +1,58 @@
+
+<h2>demonstrating 2-way binding:<br>(Adjusting the currency in the input field will update the page)</h2>
+<h2>{{currency_ori.name | uppercase}} Details</h2>
+<div><span>id: </span>{{currency_ori.id}}</div>
+<div><span>name: </span>{{currency_ori.name}}</div>
+<div>
+  <label>name:
+    <input [(ngModel)]="currency_ori.name" placeholder="name"/>
+  </label>
+</div>
+
+
+
+<h2>demonstrating displaying a list of hard-coded(mock) currencies:</h2>
+<h2>My Currencies</h2>
+<ul class="currencies">
+<li *ngFor="let currency of currencies" [class.selected]="currency === selectedCurrency" (click)="onSelect(currency)">
+    <span class="badge">{{currency.id}}</span> {{currency.name}}
+  </li>
+</ul>
+
+
+<h2>demonstrating onclick and master/detail (click a fucking master, CLICK HIM! (in the %$@@!$S#, in the apestaartje)):</h2>
+<div *ngIf="selectedCurrency">
+<h2>{{selectedCurrency.name | uppercase}} Details</h2>
+<div><span>id: </span>{{selectedCurrency.id}}</div>
+<div><span>name: </span>{{selectedCurrency.name}}</div>
+<div>
+  <label>name:
+    <input [(ngModel)]="selectedCurrency.name" placeholder="name"/>
+  </label>
+</div>
+
+</div>
+
+
+
+<!--LIBERATE currency detail through Routing-->
+
+
+<!--ul class="currencies">
+  <li *ngFor="let currency of currencies"
+    [class.selected]="currency === selectedCurrency"
+    (click)="onSelect(currency)">
+    <span class="badge">{{currency.id}}</span> {{currency.name}}
+  </li>
+</ul-->
+
+<!--ul class="currencies2">
+  <li *ngFor="let currency of currencies">
+    <a routerLink="/detail/{{currency.id}}">
+      <span class="badge2">{{currency.id}}</span> {{currency.name}}
+    </a>
+  </li>
+</ul-->
+
+
+<!--app-currency-detail [currency]="selectedCurrency"--><!--/app-currency-detail-->
